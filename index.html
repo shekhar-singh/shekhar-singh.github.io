@@ -1,12 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<title>SHEKHAR</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <title>Souradeep De</title>
+    <style type="text/css">
+    @font-face {
+        font-family: "VeraMono";
+        src: url(fonts/VeraMono.ttf) format("truetype");
+    }
+
+    body {
+        font-family: "VeraMono", sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6,p,b {
+        font-family: "VeraMono", sans-serif
+        }
+    </style>
+</head>
+
 <body>
-
-
-
-</body>
-
-</html>
+    <script type="text/javascript">
+        function make_skill(rating){
+            var rating_html = ''
+            for(var i = 0 ; i < 10 ; i++ ) {
+                if(i < rating) {
+                    rating_html = rating_html +
+                        '<span class="glyphicon glyphicon-checked"></span> '
+                }
+                else {
+                    rating_html = rating_html +
+                        '<span class="glyphicon glyphicon-unchecked"></span> '
+                }
+            }
+            return rating_html
+        }
+        function make_header_link (contact, href, text) {
+            header_link_html = '\
+                <div class="row"> \
+                    <div class="col-xs-3"> \
+                        <li><b>' + contact + '</b></li> \
+                    </div> \
+                    <div class="col-xs-9"> '
+            if (href != ''){
+                header_link_html += ' \
+                    : <a href=' + href + '>' + text + '</a> \
+                        </div> \
+                    </div>'
+            }
+            else{
+                header_link_html += ' \
+                    : <a>' + text + '</a> \
+                        </div> \
+                    </div>'
+            }
+            return header_link_html
+        }
+        function make_experience(heading, timestamp, description) {
+            experience_html = ' \
+                <li><b>' + heading + '</a></b> \
+                    <div class="pull-right"><h5><i>' + timestamp + '</i></h5></div> \
+                    <br>' + description + ' \
+                </li> \
+                <br> '
+            return experience_html
+        }
+        function make_project(heading, timestamp, description){
+            project_html = ' \
+                <li>' + heading + '<div class="pull-right"><h5><i>' + timestamp + '</i></h5></div> \
+                    <br> \
+                    ' + description + ' \
+                </li> \
+                <br> '
+            return project_html
+        }
+    </script>
+    <header>
+        <div class="container" style='font-size:90%'>
+            <div class='row'>
+                <div class='col-xs-7'>
